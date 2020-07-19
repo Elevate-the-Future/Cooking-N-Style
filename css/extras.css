@@ -1,0 +1,39 @@
+.single-footer-widget a {
+    color: #fff;
+    transition: transform .2s;
+}
+
+.single-footer-widget a:hover {
+    color: #fff;
+    text-decoration: underline;
+    transform: scale(1.2);
+}
+
+.single-footer-widget ul.pages li{
+    border-bottom: transparent;
+    margin-bottom: 0;
+    margin-top: 0;
+    padding-top: 0;
+    padding-bottom: 0.58rem;
+}
+
+.footer-area .section-gap {
+    margin-bottom: 0;
+    padding-bottom: 35px;
+    padding-top: 75px;
+}
+
+.hr-list.social-icons div a {
+    margin-right: 30%;
+    transform: scale(1.5);
+}
+
+.hr-list.social-icons div a:hover {
+    margin-right: 30%;
+    transform: scale(2);
+}
+
+.row.section-gap {
+    display: flex;
+    justify-content: space-around;
+}
