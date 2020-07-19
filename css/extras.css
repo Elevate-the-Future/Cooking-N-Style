@@ -1,3 +1,7 @@
+.footer-widget-wrap {
+    background: #222;
+}
+
 .single-footer-widget a {
     color: #fff;
     transition: transform .2s;
