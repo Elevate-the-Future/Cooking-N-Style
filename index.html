@@ -32,78 +32,86 @@
 
 	<!-- /* GALLERY SECTION CAROUSEL STYLING */ -->
 	<style>
-
 		@media (min-width: 768px) {
-					  .multi-item-carousel .carousel-inner .carousel-item {
-					    margin-right: inherit;
-					  }
-					  .multi-item-carousel .carousel-inner .carousel-item.active + .carousel-item,
-					  .multi-item-carousel .carousel-inner .carousel-item.active + .carousel-item + .carousel-item {
-					    display: block;
-					  }
-					  .multi-item-carousel .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left),
-					  .multi-item-carousel .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item,
-					  .multi-item-carousel .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item + .carousel-item {
-					    transition: none;
-					  }
-					  .multi-item-carousel .carousel-inner .carousel-item.active + .carousel-item + .carousel-item + .carousel-item {
-					    position: absolute;
-					    top: 0;
-					    right: -33.33333333333333%;
-					    z-index: -1;
-					    display: block;
-					    visibility: visible;
-					  }
-					  .multi-item-carousel .carousel-inner .carousel-item-next,
-					  .multi-item-carousel .carousel-inner .carousel-item-prev {
-					    position: relative;
-					    transform: translate3d(0, 0, 0);
-					  }
-					  .multi-item-carousel .carousel-inner .carousel-item-prev.carousel-item-right {
-					    position: absolute;
-					    top: 0;
-					    left: 0;
-					    z-index: -1;
-					    display: block;
-					    visibility: visible;
-					  }
-					  .multi-item-carousel .active.carousel-item-left + .carousel-item-next.carousel-item-left,
-					  .multi-item-carousel .carousel-item-next.carousel-item-left + .carousel-item,
-					  .multi-item-carousel .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item,
-					  .multi-item-carousel .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item + .carousel-item {
-					    position: relative;
-					    transform: translate3d(-100%, 0, 0);
-					    visibility: visible;
-					  }
-					  .multi-item-carousel .active.carousel-item-right + .carousel-item-prev.carousel-item-right,
-					  .multi-item-carousel .carousel-item-prev.carousel-item-right + .carousel-item,
-					  .multi-item-carousel .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item,
-					  .multi-item-carousel .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item + .carousel-item {
-					    position: relative;
-					    transform: translate3d(100%, 0, 0);
-					    display: block;
-					    visibility: visible;
-					  }
-					}
-		</style>
+			.multi-item-carousel .carousel-inner .carousel-item {
+				margin-right: inherit;
+			}
+
+			.multi-item-carousel .carousel-inner .carousel-item.active+.carousel-item,
+			.multi-item-carousel .carousel-inner .carousel-item.active+.carousel-item+.carousel-item {
+				display: block;
+			}
+
+			.multi-item-carousel .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left),
+			.multi-item-carousel .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left)+.carousel-item,
+			.multi-item-carousel .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left)+.carousel-item+.carousel-item {
+				transition: none;
+			}
+
+			.multi-item-carousel .carousel-inner .carousel-item.active+.carousel-item+.carousel-item+.carousel-item {
+				position: absolute;
+				top: 0;
+				right: -33.33333333333333%;
+				z-index: -1;
+				display: block;
+				visibility: visible;
+			}
+
+			.multi-item-carousel .carousel-inner .carousel-item-next,
+			.multi-item-carousel .carousel-inner .carousel-item-prev {
+				position: relative;
+				transform: translate3d(0, 0, 0);
+			}
+
+			.multi-item-carousel .carousel-inner .carousel-item-prev.carousel-item-right {
+				position: absolute;
+				top: 0;
+				left: 0;
+				z-index: -1;
+				display: block;
+				visibility: visible;
+			}
+
+			.multi-item-carousel .active.carousel-item-left+.carousel-item-next.carousel-item-left,
+			.multi-item-carousel .carousel-item-next.carousel-item-left+.carousel-item,
+			.multi-item-carousel .carousel-item-next.carousel-item-left+.carousel-item+.carousel-item,
+			.multi-item-carousel .carousel-item-next.carousel-item-left+.carousel-item+.carousel-item+.carousel-item {
+				position: relative;
+				transform: translate3d(-100%, 0, 0);
+				visibility: visible;
+			}
+
+			.multi-item-carousel .active.carousel-item-right+.carousel-item-prev.carousel-item-right,
+			.multi-item-carousel .carousel-item-prev.carousel-item-right+.carousel-item,
+			.multi-item-carousel .carousel-item-prev.carousel-item-right+.carousel-item+.carousel-item,
+			.multi-item-carousel .carousel-item-prev.carousel-item-right+.carousel-item+.carousel-item+.carousel-item {
+				position: relative;
+				transform: translate3d(100%, 0, 0);
+				display: block;
+				visibility: visible;
+			}
+		}
+
+	</style>
 
 	<!-- GALLERY SECTION CAROUSEL JS -->
 	<script>
-		$('.multi-item-carousel').on('slide.bs.carousel', function (e) {
-		  let $e = $(e.relatedTarget),
-		      itemsPerSlide = 3,
-		      totalItems = $('.carousel-item', this).length,
-		      $itemsContainer = $('.carousel-inner', this),
-		      it = itemsPerSlide - (totalItems - $e.index());
-		  if (it > 0) {
-		    for (var i = 0; i < it; i++) {
-		      $('.carousel-item', this).eq(e.direction == "left" ? i : 0).
-		        // append slides to the end/beginning
-		        appendTo($itemsContainer);
-		    }
-		  }
+		$('.multi-item-carousel').on('slide.bs.carousel', function(e) {
+			let $e = $(e.relatedTarget),
+				itemsPerSlide = 3,
+				totalItems = $('.carousel-item', this).length,
+				$itemsContainer = $('.carousel-inner', this),
+				it = itemsPerSlide - (totalItems - $e.index());
+			if (it > 0) {
+				for (var i = 0; i < it; i++) {
+					$('.carousel-item', this).eq(e.direction == "left" ? i : 0).
+					// append slides to the end/beginning
+					appendTo($itemsContainer);
+				}
+			}
 		});
-		</script>
+
+	</script>
 	<meta property="og:title" content="Home - Cooking N&apos; Style">
 	<meta property="og:description" content>
 	<meta property="og:image" content>
@@ -116,26 +124,25 @@
 	<header id="header" style="z-index: 1;">
 		<div class="header-top">
 			<div class="container">
-					<div class="row justify-content-center">
-							<div id="logo">
-								<a href="index.html"><img src="img/logo.png" alt="Cooking N Style Logo" width=" 80px" height="80px" title="" /></a>
-							</div>
+				<div class="row justify-content-center">
+					<div id="logo">
+						<a href="index.html"><img src="img/logo.png" alt="Cooking N Style Logo" width=" 80px" height="80px" title></a>
 					</div>
+				</div>
 			</div>
 		</div>
 		<div class="container main-menu">
-			
-			
+
 			<div class="row align-items-center justify-content-center d-flex">
-					<nav id="nav-menu-container">
-						<ul class="nav-menu">
-							<li><a href="index.html">Home</a></li>
-							<li><a href="about.html">About</a></li>
-							<li><a href="menu.html">Menu</a></li>
-							<li><a href="gallery.html">Gallery</a></li>
-							<li><a href="contact.html">Contact</a></li>
-						</ul>
-					</nav><!-- #nav-menu-container -->
+				<nav id="nav-menu-container">
+					<ul id="home-nav" class="cms-editable nav-menu">
+						<li><a href="index.html">Home</a></li>
+						<li><a href="about.html">About</a></li>
+						<li><a href="menu.html">Menu</a></li>
+						<li><a href="gallery.html">Gallery</a></li>
+						<li><a href="contact.html">Contact</a></li>
+					</ul>
+				</nav><!-- #nav-menu-container -->
 			</div>
 		</div>
 	</header><!-- #header -->
@@ -145,14 +152,10 @@
 	<section class="banner-area" style="height: 95vh;">
 		<div class="container">
 			<div class="row fullscreen align-items-center justify-content-between">
-				<div class="col-lg-12 banner-content">
-					<h1 class="text-white">Cooking N' Style</h1>
-					<p class="text-white">
-						<b>Every Order is Made Fresh!</b>
-						<br>
-						Located in the Bay Area - San Francisco
-					</p>
-					<a href="menu.html" style="border-radius: 5px;" class="primary-btn text-uppercase">Check Out Our Menu</a>
+				<div id="hero" class="cms-editable col-lg-12 banner-content">
+					<h1 class="text-white">Cooking N&apos; Style</h1>
+					<p class="text-white"><strong>Every Order is Made Fresh!</strong> <br>Located in the Bay Area - San Francisco</p>
+					<p><a class="primary-btn text-uppercase" style="border-radius: 5px;" href="menu.html">Check Out Our Menu</a></p>
 				</div>
 			</div>
 		</div>
@@ -186,12 +189,12 @@
 				</center><br><br>
 				<div id="theCarousel" class="carousel slide multi-item-carousel">
 					<div class="carousel-inner row w-100 mx-auto">
-						<div class="carousel-item active col-md-4"><img style="border-radius: 5px;"class="img-fluid mx-auto d-block" src="img/g1.png"></div>
-						<div class="carousel-item col-md-4"><img style="border-radius: 5px;" class="img-fluid mx-auto d-block" src="img/g2.png"></div>
-						<div class="carousel-item col-md-4"><img style="border-radius: 5px;" class="img-fluid mx-auto d-block" src="img/g3.png"></div>
-						<div class="carousel-item col-md-4"><img style="border-radius: 5px;" class="img-fluid mx-auto d-block" src="img/g4.png"></div>
-						<div class="carousel-item col-md-4"><img style="border-radius: 5px;" class="img-fluid mx-auto d-block" src="img/g5-2.png" width="500px"
-							     height="500px"></div>
+						<div class="carousel-item active col-md-4"><img class="img-fluid mx-auto d-block" style="border-radius: 5px;" src="img/g1.png"></div>
+						<div class="carousel-item col-md-4"><img class="img-fluid mx-auto d-block" style="border-radius: 5px;" src="img/g2.png"></div>
+						<div class="carousel-item col-md-4"><img class="img-fluid mx-auto d-block" style="border-radius: 5px;" src="img/g3.png"></div>
+						<div class="carousel-item col-md-4"><img class="img-fluid mx-auto d-block" style="border-radius: 5px;" src="img/g4.png"></div>
+						<div class="carousel-item col-md-4"><img class="img-fluid mx-auto d-block" style="border-radius: 5px;" src="img/g5-2.png"
+							     width="500px" height="500px"></div>
 						<div class="carousel-item col-md-4"><img class="img-fluid mx-auto d-block" src="img/g6-2.png"></div>
 						<div class="carousel-item col-md-4"><img class="img-fluid mx-auto d-block" src="img/g9-2.png"></div>
 					</div>
@@ -212,12 +215,12 @@
 					<div class="title text-center">
 						<h1 class="mb-10">Try our Specialty Burritos</h1>
 						Check out our <strong>Secret Menu</strong> <br><br><a class="genric-btn primary circle arrow" href="menu.html">‎‎
-							Full Menu &rarr; </a>
+							Full Menu → </a>
 					</div>
 				</div>
 			</div>
 			<div class="filters-content">
-				<div class="row grid" style="position: relative; height: 1824px;">
+				<div class="row grid" style="position: relative; height: 242px;">
 					<!-- CHICKEN MENU -->
 					<div class="home-menu col-md-6 all init-load breakfast cms-repeatable" style="position: absolute; left: 0%; top: 0px;">
 						<div class="single-menu h-menu">
@@ -230,10 +233,9 @@
 																	<img src="img/logo.png" alt="Chicken">
 																</p> -->
 					</div>
-					
 					<!-- END CHICKEN MENU -->
 					<!-- SHRIMP MENU -->
-					<div class="home-menu col-md-6 all dinner cms-repeatable" style="position: absolute; left: 0%; top: 486px;">
+					<div class="home-menu col-md-6 all dinner cms-repeatable" style="position: absolute; left: 50%; top: 0px;">
 						<div class="single-menu h-menu">
 							<div class="title-wrap d-flex justify-content-between">
 								<h4>Shrimp</h4>
@@ -241,10 +243,9 @@
 							</div>
 						</div>
 					</div>
-					
 					<!-- SHRIMP MENU END  -->
 					<!-- LOBSTER MENU -->
-					<div class="home-menu col-md-6 all budget-meal" style="position: absolute; left: 50%; top: 851px;">
+					<div class="home-menu col-md-6 all budget-meal" style="position: absolute; left: 0%; top: 121px;">
 						<div class="single-menu h-menu">
 							<div class="title-wrap d-flex justify-content-between">
 								<h4>Lobster</h4>
@@ -252,10 +253,9 @@
 							</div>
 						</div>
 					</div>
-					
 					<!-- LOBSTER MENU END -->
 					<!-- STEAK MENU -->
-					<div class="home-menu col-md-6 all lunch" style="position: absolute; left: 0%; top: 1337px;">
+					<div class="home-menu col-md-6 all lunch" style="position: absolute; left: 50%; top: 121px;">
 						<div class="single-menu h-menu">
 							<div class="title-wrap d-flex justify-content-between">
 								<h4>Steak</h4>
@@ -267,7 +267,6 @@
 						</div>
 					</div>
 					<!-- STEAK MENU END -->
-
 				</div>
 			</div>
 			<br><br>
@@ -281,7 +280,7 @@
 	<section class="gallery-area section-gap section-gap-1" id="about">
 		<div class="container">
 			<div class="title text-center">
-				<h1 class="mb-10">Check Us Out on <a style="color:red" href="https://www.instagram.com/cookingnstyle/">Instagram</a></h1>
+				<h1 id="instaTitle" class="cms-editable mb-10">Check Us Out on <a style="color: red;" href="https://www.instagram.com/cookingnstyle/">Instagram</a></h1>
 			</div>
 
 			<div class="filters-content insta">
@@ -483,20 +482,26 @@
 							<div style="padding-left: 15px; padding-right: 15px;">
 								<h4 style="color: #f42f2c; padding-bottom: 10px;">Opening Hours</h4>
 								<ul class="hr-list">
-									<table style="width: 100%;">
-										<tr>
-											<li class="d-flex justify-content-between" style="border-bottom: none; margin-bottom: 0; padding-bottom: 5px;"><td>Monday</td><td>Closed</td></li>
-										</tr>
-										<tr>
-											<li class="d-flex justify-content-between" style="border-bottom: none; margin-bottom: 0; padding-bottom: 5px;"><td>Tuesday - Friday</td><td>01:00 pm - 07:00 pm</td></li>
-										</tr>
-										<tr>
-											<li class="d-flex justify-content-between" style="border-bottom: none; margin-bottom: 0; padding-bottom: 5px;"><td>Saturday - Sunday</td><td>Closed</td></li>
-										</tr>	
-											<!-- <li class="d-flex justify-content-between" style="border-bottom: none; margin-bottom: 0; padding-bottom: 5px;">Tuesday - Friday&emsp;&emsp;&emsp;&emsp;01:00 pm - 07:00 pm</li>
-											<li class="d-flex justify-content-between" style="border-bottom: none; margin-bottom: 0; padding-bottom: 5px;">Saturday - Sunday&emsp;&emsp;&emsp;&emsp;Closed</li>
-										</tr> -->
-									</table>
+									<ul class="hr-list">
+										<li class="d-flex justify-content-between" style="border-bottom: none; margin-bottom: 0; padding-bottom: 5px;">
+											<table style="width: 100%;">
+												<tbody>
+													<tr>
+														<td>Monday</td>
+														<td>Closed</td>
+													</tr>
+													<tr>
+														<td>Tuesday - Friday</td>
+														<td>01:00 pm - 07:00 pm</td>
+													</tr>
+													<tr>
+														<td>Saturday - Sunday</td>
+														<td>Closed</td>
+													</tr>
+												</tbody>
+											</table>
+										</li>
+									</ul>
 								</ul>
 							</div>
 							<hr style="background-color: rgba(238,238,238,0.3);">
@@ -530,13 +535,10 @@
 			<div class="container">
 				<div class="row footer-bottom d-flex justify-content-center align-items-center">
 					<p class="col-lg-8 col-mdcol-sm-6 -6 footer-text m-0" style="text-align: center;">
-						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --> Copyright ©
-						<script>
-							document.write(new Date().getFullYear());
-
-						</script>
-						Cooking N Style | Template by <a style="color: #f42f2c; font-weight: bold;" href="https://colorlib.com"
-						target="_blank" rel="noopener">Colorlib</a> | Made by Elevate the Future's <a style="color: #f42f2c; font-weight: bold;" target="_blank" href="https://www.elevatethefuture.org/projectfalcon">Project Falcon</a>
+						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --> Copyright © 2020 Cooking N
+						Style | Template by <a style="color: #f42f2c; font-weight: bold;" href="https://colorlib.com" target="_blank" rel="noopener">Colorlib</a>
+						| Made by Elevate the Future&apos;s <a style="color: #f42f2c; font-weight: bold;" href="https://www.elevatethefuture.org/projectfalcon"
+						   target="_blank" rel="noopener">Project Falcon</a>
 						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 					</p>
 				</div>
