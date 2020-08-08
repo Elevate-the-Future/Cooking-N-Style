@@ -14,9 +14,44 @@
 	<!-- meta character set -->
 	<meta charset="utf-8">
 	<!-- Site Title -->
-	<title>Gallery - Cooking N&apos; Style</title>
+	<title>About - Cooking N&apos; Style</title>
 
 	<link rel="icon" href="img/logo.png">
+	<!-- - SLIDESHOW ON ABOUT PAGE STYLING - -->
+	<style>
+		.slider {
+	  max-width: 450px;
+	  height: 575px;
+	  margin: 20px auto;
+	  position: relative;
+	}
+	.slide1,.slide2,.slide3,.slide4,.slide5 {
+	  position: absolute;
+	  width: 100%;
+	  height: 100%;
+	}
+	.slide1 {
+	  background: url("img/about1.png")no-repeat center;
+	      background-size: cover;
+	    animation:fade 8s infinite;
+	-webkit-animation:fade 8s infinite;
+
+	}
+	.slide2 {
+	  background: url("img/about2.png")no-repeat center;
+	      background-size: cover;
+	    animation:fade2 8s infinite;
+	-webkit-animation:fade2 8s infinite;
+	}
+	.slide3 {
+	    background: url("img/about3.png")no-repeat center;
+	      background-size: cover;
+	    animation:fade3 8s infinite;
+	-webkit-animation:fade3 8s infinite;
+	}
+	/* ----------------SLIDESHOW ON ABOUT PAGE--------------------- */
+</style>
+
 	<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
 	<!--
 			CSS
@@ -31,11 +66,11 @@
 	<link rel="stylesheet" href="css/owl.carousel.css">
 	<link rel="stylesheet" href="css/main.css">
 	<link rel="stylesheet" href="css/extras.css">
-	<meta property="og:title" content="Gallery - Cooking N&apos; Style">
+	<meta property="og:title" content="About - Cooking N&apos; Style">
 	<meta property="og:description" content>
 	<meta property="og:image" content>
 	<meta property="og:type" content="website">
-	<meta property="og:url" content="https://www.cookingnstyle.com/master/gallery.html">
+	<meta property="og:url" content="https://www.cookingnstyle.com/master/about.html">
 </head>
 <body>
 	<header id="header" class="cms-editable">
@@ -52,11 +87,10 @@
 				   class="lnr lnr-menu"></i></button><span class="menu-title">Menu</span> <button id="mobile-nav-toggle" type="button"><i
 				   class="lnr lnr-menu"></i></button><span class="menu-title">Menu</span> <button id="mobile-nav-toggle" type="button"><i
 				   class="lnr lnr-menu"></i></button><span class="menu-title">Menu</span> <button id="mobile-nav-toggle" type="button"><i
-				   class="lnr lnr-menu"></i></button><span class="menu-title">Menu</span> <button id="mobile-nav-toggle" type="button"><i
 				   class="lnr lnr-menu"></i></button>
 			<div class="row align-items-center justify-content-center d-flex">
 				<nav id="nav-menu-container">
-					<ul class="nav-menu sf-js-enabled sf-arrows" style="touch-action: pan-y;">
+					<ul class="nav-menu sf-js-enabled sf-arrows" style="touch-action: auto;">
 						<li><a href="index.html">Home</a></li>
 						<li><a href="about.html">About</a></li>
 						<li><a href="menu.html">Menu</a></li>
@@ -125,114 +159,56 @@
 				</ul>
 			</nav>
 			<div id="mobile-body-overly"> </div>
-			<nav id="mobile-nav">
-				<ul id class style="touch-action: pan-y;">
-					<li><a href="index.html">Home</a></li>
-					<li><a href="about.html">About</a></li>
-					<li><a href="menu.html">Menu</a></li>
-					<li><a href="gallery.html">Gallery</a></li>
-					<li><a href="contact.html">Contact</a></li>
-				</ul>
-			</nav>
-			<div id="mobile-body-overly"> </div>
 		</div>
 	</header><!-- #header -->
 
 	<!-- start banner Area -->
-	<section id="galleryHero" class="cms-editable about-banner relative">
-		<div class="overlay overlay-bg"> </div>
+	<section class="about-banner relative">
+		<div class="overlay overlay-bg"></div>
 		<div class="container">
 			<div class="row d-flex align-items-center justify-content-center">
-				<div class="about-content col-lg-12">
-					<h1 class="text-white">Gallery</h1>
-					<p class="text-white link-nav"><a href="index.html">Home </a>- <a href="gallery.html">Gallery</a></p>
+				<div id="aboutHeader" class="cms-editable about-content col-lg-12">
+					<h1 class="text-white">About Us</h1>
+					<p class="text-white link-nav"><a href="index.html">Home - </a><a href="about.html">About Us</a></p>
 				</div>
 			</div>
 		</div>
 	</section>
 	<!-- End banner Area -->
 
-	<!-- Start gallery-area Area -->
-	<section class="gallery-area section-gap" id="gallery">
+	<!-- Start home-about Area -->
+	<section class="home-about-area section-gap">
 		<div class="container">
-			<div class="row d-flex justify-content-center">
-				<div class="menu-content pb-70 col-lg-8">
-					<div class="title text-center">
-						<h1 id="galleryTitle" class="cms-editable mb-10">Food Gallery</h1>
-					</div>
+			<div class="row align-items-center">
+				<div id="about" class="col-lg-6 home-about-left cms-editable">
+					<h1>Our Story</h1>
+					<p style="font-size: 24px; color: gray;">CEO Bernard Hutcherson</p>
+					<p>I was born and raised in San Francisco (Bayview Hunter’s Point to be exact). My love and introduction to
+						cooking came from watching the best to ever do it: my mother! I would watch her hold it down in the kitchen
+						almost every night, but the real magic happened during the holidays. Occasionally during the holidays, I would
+						get to experience my mom entering friendly family cooking competitions. She often won, especially when it came to
+						baking. Unfortunately, I lost my mom at a young age, but I would find that she passed her talent and passion for
+						cooking on to me. <br><br>I found my passion for cooking at the age of 13. The first meal I made on my own was
+						Chicken and Shrimp Alfredo. However, it wasn’t your regular old Alfredo pasta. I made it with my own special
+						lemon butter crab. Although my first time making this pasta was pretty good, I’m a perfectionist and I continued
+						to refine my recipe over the years. Which had gotten better and better over time. <br><br>While I enjoy cooking
+						many dishes from soul food, to Japanese, the thing I have become most famous for are my burritos. I began to make
+						burritos because after searching throughout the Bay Area, I was unable to find a burrito that could satisfy or
+						come close to meeting my expectations for flavor. <br><br>In 2017 I decided to quit my job and pursue my passion
+						full time. So, with only two hundred dollars in my pocket, a child to raise and bills to pay, I took a leap of
+						faith and began establishing myself as a passionate cook and CEO of Cooking N Style.</p>
+					<p><br><a class="primary-btn" style="border-radius: 5px;" href="menu.html">view full menu</a></p>
 				</div>
-			</div>
-
-			<div id="galleryPhotos" class="cms-editable filters-content">
-				<div class="row" style="position: relative; height: 1813px;">
-					<div class="cms-repeatable col-lg-4 col-md-6 col-sm-6 all menu" style="position: absolute; left: 0%; top: 0px;">
-						<div class="single-gallery"><img class="img-fluid" src="img/g1.png" alt></div>
-					</div>
-					<div class="cms-repeatable col-lg-4 col-md-6 col-sm-6 all dinner" style="position: absolute; left: 33.24561403508772%; top: 0px;">
-						<div class="single-gallery"><img class="img-fluid" src="img/g2.png" alt></div>
-					</div>
-					<div class="cms-repeatable col-lg-4 col-md-6 col-sm-6 all budget-meal" style="position: absolute; left: 66.57894736842105%; top: 0px;">
-						<div class="single-gallery"><img class="img-fluid" src="img/g3.png" alt></div>
-					</div>
-					<div class="cms-repeatable col-lg-4 col-md-6 col-sm-6 all breakfast" style="position: absolute; left: 0%; top: 381px;">
-						<div class="single-gallery"><img class="img-fluid" src="img/g4.png" alt></div>
-					</div>
-					<div class="cms-repeatable col-lg-4 col-md-6 col-sm-6 all lunch" style="position: absolute; left: 33.24561403508772%; top: 381px;">
-						<div class="single-gallery"><img class="img-fluid" src="img/g5.png" alt></div>
-					</div>
-					<div class="cms-repeatable col-lg-4 col-md-6 col-sm-6 all buffet" style="position: absolute; left: 66.57894736842105%; top: 381px;">
-						<div class="single-gallery"><img class="img-fluid" src="img/g6.png" alt></div>
-					</div>
-					<div class="cms-repeatable col-lg-4 col-md-6 col-sm-6 all buffet" style="position: absolute; left: 0%; top: 762px;">
-						<div class="single-gallery"><img class="img-fluid" src="img/g7.png" alt></div>
-					</div>
-					<div class="cms-repeatable col-lg-4 col-md-6 col-sm-6 all buffet" style="position: absolute; left: 33.24561403508772%; top: 817px;">
-						<div class="single-gallery"><img class="img-fluid" src="img/g8.png" alt></div>
-					</div>
-					<div class="cms-repeatable col-lg-4 col-md-6 col-sm-6 all buffet" style="position: absolute; left: 66.57894736842105%; top: 879px;">
-						<div class="single-gallery"><img class="img-fluid" src="img/g9.png"></div>
-					</div>
-					<div class="cms-repeatable col-lg-4 col-md-6 col-sm-6 all buffet" style="position: absolute; left: 33.24561403508772%; top: 1315px;">
-						<div class="single-gallery"><img class="img-fluid" src="img/g11.PNG"></div>
-					</div>
-				</div>
-			</div>
-			<br>
-			<div class="title text-center cms-editable" id="insta-header">
-				<h1 class="mb-10">Check Us Out on Instagram</h1>
-				<p>View more content <strong>updated regularly</strong> <br><br><a class="genric-btn primary circle arrow" href="https://www.instagram.com/cookingnstyle/">‎‎
-						Instagram </a></p>
-			</div>
-
-			<div class="filters-content cms-editable" id="instagram">
-				<div class="row grid" style="position: relative; height: 583px;">
-					<div class="col-lg-4 col-md-6 col-sm-6 all menu" style="position: absolute; left: 0%; top: 0px;">
-						<div class="single-gallery"><iframe class="instagram-media instagram-media-rendered" id="instagram-embed-0" src="https://www.instagram.com/p/CBmQXvsAJiF/embed/?cr=1&amp;v=12&amp;wp=435&amp;rd=https%3A%2F%2Fedit.surrealcms.com&amp;rp=%2Fapi%2Fsites%2Ff0892900-97e8-414f-bd29-d2d9ed7bbc7a%2Fpages%2Fdc003405-fa89-4251-907c-089470039d9e%2Frender#%7B%22ci%22%3A0%2C%22os%22%3A427.34999989625067%2C%22ls%22%3A373.0849999701604%2C%22le%22%3A375.88499998673797%7D"
-							        allowtransparency="true" allowfullscreen="true" frameborder="0" height="552" data-instgrm-payload-id="instagram-media-payload-0"
-							        scrolling="no" style="background: white; max-width: 400px; width: calc(100% - 2px); border-radius: 3px; border: 1px solid #dbdbdb; box-shadow: none; display: block; margin: 0px 0px 12px; min-width: 326px; padding: 0px;"></iframe>
-							<script async src="https://www.instagram.com/embed.js"></script>
-						</div>
-					</div>
-					<div class="col-lg-4 col-md-6 col-sm-6 all dinner" style="position: absolute; left: 33.2456%; top: 0px;">
-						<div class="single-gallery"><iframe class="instagram-media instagram-media-rendered" id="instagram-embed-1" src="https://www.instagram.com/p/B_OIzQugT5T/embed/?cr=1&amp;v=12&amp;wp=435&amp;rd=https%3A%2F%2Fedit.surrealcms.com&amp;rp=%2Fapi%2Fsites%2Ff0892900-97e8-414f-bd29-d2d9ed7bbc7a%2Fpages%2Fdc003405-fa89-4251-907c-089470039d9e%2Frender#%7B%22ci%22%3A1%2C%22os%22%3A431.1049999669194%2C%22ls%22%3A373.0849999701604%2C%22le%22%3A375.88499998673797%7D"
-							        allowtransparency="true" allowfullscreen="true" frameborder="0" height="552" data-instgrm-payload-id="instagram-media-payload-1"
-							        scrolling="no" style="background: white; max-width: 400px; width: calc(100% - 2px); border-radius: 3px; border: 1px solid #dbdbdb; box-shadow: none; display: block; margin: 0px 0px 12px; min-width: 326px; padding: 0px;"></iframe>
-							<script async src="https://www.instagram.com/embed.js"></script>
-						</div>
-					</div>
-					<div class="col-lg-4 col-md-6 col-sm-6 all budget-meal" style="position: absolute; left: 66.5789%; top: 0px;">
-						<div class="single-gallery"><iframe class="instagram-media instagram-media-rendered" id="instagram-embed-2" src="https://www.instagram.com/p/B_1i1nXgaxP/embed/?cr=1&amp;v=12&amp;wp=435&amp;rd=https%3A%2F%2Fedit.surrealcms.com&amp;rp=%2Fapi%2Fsites%2Ff0892900-97e8-414f-bd29-d2d9ed7bbc7a%2Fpages%2Fdc003405-fa89-4251-907c-089470039d9e%2Frender#%7B%22ci%22%3A2%2C%22os%22%3A433.50999988615513%2C%22ls%22%3A373.0849999701604%2C%22le%22%3A375.88499998673797%7D"
-							        allowtransparency="true" allowfullscreen="true" frameborder="0" height="552" data-instgrm-payload-id="instagram-media-payload-2"
-							        scrolling="no" style="background: white; max-width: 400px; width: calc(100% - 2px); border-radius: 3px; border: 1px solid #dbdbdb; box-shadow: none; display: block; margin: 0px 0px 12px; min-width: 326px; padding: 0px;"></iframe>
-							<script async src="https://www.instagram.com/embed.js"></script>
-						</div>
+				<div class="col-lg-6 home-about-right">
+					<div class="slider">
+						<div id="slide1" class="cms-editable slide1"></div>
 					</div>
 				</div>
 			</div>
 		</div>
-
 	</section>
-	<!-- End gallery-area Area -->
+	<!-- End home-about Area -->
+
 	<!-- start footer Area -->
 
 	<footer id="footer" class="footer-area cms-editable">
