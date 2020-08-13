@@ -80,3 +80,20 @@ div.single-gallery img.img-fluid {
     border-radius: 10px;
     box-shadow: #2d2d2d 1px 1px;
 }
+
+.myVideo {
+    background: #212529;
+    height: 95vh;
+    width: 100vw;
+    position: absolute;
+}
+
+@media (max-width: 767px){
+    .myVideo {
+        height: auto !important;
+        position: static;
+    }
+    #banner-text {
+        display: none;
+    }
+}
