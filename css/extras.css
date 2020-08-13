@@ -88,12 +88,18 @@ div.single-gallery img.img-fluid {
     position: absolute;
 }
 
-@media (max-width: 767px){
+@media (max-width: 1140px){
     .myVideo {
         height: auto !important;
         position: static;
     }
     #banner-text {
         display: none;
+    }
+}
+
+@media (max-width: 1480px){
+    .myVideo {
+        height: auto !important;
     }
 }
