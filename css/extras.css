@@ -92,19 +92,12 @@ div.single-gallery img.img-fluid {
 .myVideo {
     background: #212529;
     width: 100vw;
-    height: 95vh;
+    height: 92vh;
     object-fit: cover;
 }
 
 @media (max-width: 1140px){
     .myVideo {
         position: static;
-    }
-    #banner-text {
-    }
-}
-
-@media (max-width: 1480px){
-    .myVideo {
     }
 }
